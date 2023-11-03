@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://kit.fontawesome.com/4f3e1a72fd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Fisheye - photographe </title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/></a>
+    </header>
+    <main id="main">
+      <div class="photograph-header"></div>
+        <div class="media_section">
+          <div class="media_sort">
+            <span class="sort">Trier par</span>
+            <button class="contact_button"> Sort </button>
+          </div>
+          <div class="price-area">
+          </div>
+        </div>
+    </main>
+
+    <div id="photo_modal">
+      <div id="photo_content">
+        <img src="assets/icons/close.svg" class="close-cross" onclick="closePhotoModal()" />
+        <i class="fa-solid fa-chevron-left"></i>
+        <div class="align-media">
+          <img id="photo_print"/>
+          <video id="video_print" controls></video>
+          <div id="title"></div>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+
+    <div id="contact_modal">
+			<div class="modal">
+				<header>
+          <h2>Contactez-moi</h2>
+          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2 class="name"></h2>
+        </header>
+				<form id="formID">
+					<div>
+						<label>Prénom</label>
+						<input />
+					</div>
+          <div>
+						<label>Nom</label>
+						<input />
+					</div>
+          <div>
+						<label>Email</label>
+						<input />
+					</div>
+          <div>
+            <label>Votre message</label>
+            <textarea class="message"></textarea>
+          </div>
+          <button class="contact_button">Envoyer</button>
+				</form>
+			</div>
+		</div>
+    <script src="scripts/templates/profile.js"></script>
+    <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
+  </body>
+</html>

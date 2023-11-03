@@ -1,0 +1,278 @@
+#contact_modal {
+    display: none;
+}
+
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photograph-header article {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+.photograph-header article .infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.infos h1 {
+    margin: 0;
+    color: #D3573C;
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.infos .location {
+    font-size: 24px;
+    color: #901C1C;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.media_section {
+    margin: 20px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sort {
+    font-size: 18px;
+}
+
+.media_sort {
+    display: flex;
+    width: 100%;
+}
+
+.art {
+    display: flex;
+    width: 30%;
+    height: 350px;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    color: #901C1C;
+    font-size: 24px;
+}
+
+.art img {
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.art video {
+    width: 350px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.picInfos {
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.heart {
+    margin-left: 5px;
+}
+
+.price-area {
+    display: flex;
+    position: fixed;
+    background-color: #DB8876;
+    z-index: 1;
+    top: 93%;
+    left: 70%;
+    border-radius: 5px;
+    padding: 15px 5px;
+    justify-content: space-between;
+}
+
+.price-area span {
+    font-size: 24px;
+    margin: 10px 20px;
+}
+
+#photo_modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+}
+
+#photo_content {
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    width: 1253px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.fa-chevron-left {
+    font-size: 48px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #901C1C;
+}
+
+.fa-chevron-right {
+    display: flex;
+    font-size: 48px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #901C1C;
+}
+
+.close-cross {
+    display: flex;
+    position: absolute;
+    left: 96%;
+    top: 50px;
+    background-color: red;
+}
+
+#photo_print {
+    max-width: 1050px;
+    max-height: 900px;
+    border-radius: 5px;
+    box-shadow: 5px 0px 1px #C4C4C4;
+    object-fit: contain;
+}
+
+#video_print {
+    max-width: 1050px;
+    max-height: 900px;
+}
+
+#title {
+    font-size: 24px;
+    color: #901C1C;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#contact_modal {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal {
+    position: relative;
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.modal header {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    display: flex;
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+    width: 90%;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+.message {
+    height: 170px;
+    width: 100%;
+}
