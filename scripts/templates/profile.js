@@ -71,7 +71,6 @@ function mediaTemplate(data) {
                 const photoTitle = document.getElementById("title");
                 modalPhoto.src = this.src;
                 photoTitle.innerText = this.alt;
-                console.log(slidesContainer);
             }
             
         }

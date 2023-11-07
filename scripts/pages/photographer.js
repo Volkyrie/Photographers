@@ -82,7 +82,111 @@ profileInit();
 
 // Photo modal functions
 
+const previousClick = document.getElementById('prevClick');
+
 function closePhotoModal() {
     const modal = document.getElementById("photo_modal");
     modal.style.display = "none";
+}
+
+async function moveSlidePrev() {
+    const { media } = await getMedia();
+    const currentMedia = document.getElementById('title').innerText;
+    let getID = new URL(document.location).searchParams;
+    let id = getID.get("id");
+    const mediaFilter = media.filter(item => item.photographerId == id);
+    const imax = mediaFilter.length;
+    
+
+    for(let i=0; i < imax.length; i++) {
+        if(currentMedia == mediaFilter[i].title){
+            if(i>0) {
+                const picture = `assets/images/${id}/${mediaFilter[i-1].image}`;
+                let extension = picture.split('.').pop();
+                document.getElementById('title').innerText = mediaFilter[i-1].title;
+                if(extension == "jpg") {
+                    document.getElementById('photo_print').setAttribute('src', picture);
+                    document.getElementById('photo_print').style.display = "block";
+                    document.getElementById('video_print').style.display = "none";
+                    break;
+                }
+                else {
+                    const picture = `assets/images/${id}/${mediaFilter[i-1].video}`;
+                    document.getElementById('video_print').setAttribute('src', picture);
+                    document.getElementById('video_print').style.display = "block";
+                    document.getElementById('photo_print').style.display = "none";
+                    break;
+                }
+            }
+            else {
+                const picture = `assets/images/${id}/${mediaFilter[imax-1].image}`;
+                let extension = picture.split('.').pop();
+                document.getElementById('title').innerText = mediaFilter[imax-1].title;
+                if(extension == "jpg") {
+                    document.getElementById('photo_print').setAttribute('src', picture);
+                    document.getElementById('photo_print').style.display = "block";
+                    document.getElementById('video_print').style.display = "none";
+                    break;
+                }
+                else {
+                    const picture = `assets/images/${id}/${mediaFilter[imax-1].video}`;
+                    document.getElementById('video_print').setAttribute('src', picture);
+                    document.getElementById('video_print').style.display = "block";
+                    document.getElementById('photo_print').style.display = "none";
+                    break;
+                }
+            }
+        }
+    }
+}
+
+async function moveSlideNext() {
+    const { media } = await getMedia();
+    const currentMedia = document.getElementById('title').innerText;
+    let getID = new URL(document.location).searchParams;
+    let id = getID.get("id");
+    const mediaFilter = media.filter(item => item.photographerId == id);
+    const imax = mediaFilter.length;
+    
+
+    for(let i=0; i < imax; i++) {
+        if(currentMedia == mediaFilter[i].title){
+            if(i < imax-1) {
+                const picture = `assets/images/${id}/${mediaFilter[i+1].image}`;
+                let extension = picture.split('.').pop();
+                document.getElementById('title').innerText = mediaFilter[i+1].title;
+                if(extension == "jpg") {
+                    document.getElementById('photo_print').setAttribute('src', picture);
+                    document.getElementById('photo_print').style.display = "block";
+                    document.getElementById('video_print').style.display = "none";
+                    break;
+                }
+                else {
+                    const picture = `assets/images/${id}/${mediaFilter[i+1].video}`;
+                    document.getElementById('video_print').setAttribute('src', picture);
+                    document.getElementById('video_print').style.display = "block";
+                    document.getElementById('photo_print').style.display = "none";
+                    break;
+                }
+            }
+            else {
+                const picture = `assets/images/${id}/${mediaFilter[0].image}`;
+                let extension = picture.split('.').pop();
+                document.getElementById('title').innerText = mediaFilter[0].title;
+                if(extension == "jpg") {
+                    document.getElementById('photo_print').setAttribute('src', picture);
+                    document.getElementById('photo_print').style.display = "block";
+                    document.getElementById('video_print').style.display = "none";
+                    break;
+                }
+                else {
+                    const picture = `assets/images/${id}/${mediaFilter[0].video}`;
+                    document.getElementById('video_print').setAttribute('src', picture);
+                    document.getElementById('video_print').style.display = "block";
+                    document.getElementById('photo_print').style.display = "none";
+                    break;
+                }
+            }
+        }
+    }
 }

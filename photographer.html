@@ -27,13 +27,13 @@
     <div id="photo_modal">
       <div id="photo_content">
         <img src="assets/icons/close.svg" class="close-cross" onclick="closePhotoModal()" />
-        <i class="fa-solid fa-chevron-left"></i>
+        <i id="prevClick" class="fa-solid fa-chevron-left" onclick="moveSlidePrev()"></i>
         <div class="align-media">
           <img id="photo_print"/>
           <video id="video_print" controls></video>
           <div id="title"></div>
         </div>
-        <i class="fa-solid fa-chevron-right"></i>
+        <i id="nextClick" class="fa-solid fa-chevron-right" onclick="moveSlideNext()"></i>
       </div>
     </div>
 
