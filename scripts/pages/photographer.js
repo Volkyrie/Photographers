@@ -34,7 +34,6 @@ async function displayMedia(photographers, media) {
     const totLikes = allLikes.reduce((totValue, nextValue) => totValue + nextValue, initValue);
     const finalPrice = dailyPrice.reduce((totValue, nextValue) => totValue + nextValue, initValue);
 
-
     // Priniting the photographer's profile
     photographers.forEach((photographer) => {
         if (photographer.id == id) {
@@ -63,11 +62,18 @@ async function displayMedia(photographers, media) {
     heart.classList.add("fa-solid", "fa-heart", "heart");
 
     const price = document.createElement('span');
-    price.innerText = `${finalPrice} / jour`;
+    price.innerText = `${finalPrice}€ / jour`;
 
     priceArea.appendChild(likesPrint);
     likesPrint.appendChild(heart);
     priceArea.appendChild(price);
+
+    const likes = document.querySelectorAll(".likes");
+    likes.forEach((like) => like.addEventListener("click", function () {
+        const nbLiked = document.querySelectorAll(".isLiked");
+        likesPrint.innerText = totLikes + nbLiked.length;
+        likesPrint.appendChild(heart);
+    }));
 }
 
 async function profileInit() {
@@ -97,8 +103,7 @@ async function moveSlidePrev() {
     const mediaFilter = media.filter(item => item.photographerId == id);
     const imax = mediaFilter.length;
     
-
-    for(let i=0; i < imax.length; i++) {
+    for(let i=0; i < imax; i++) {
         if(currentMedia == mediaFilter[i].title){
             if(i>0) {
                 const picture = `assets/images/${id}/${mediaFilter[i-1].image}`;

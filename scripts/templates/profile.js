@@ -53,9 +53,7 @@ function mediaTemplate(data) {
         const article = document.createElement( 'article' );
         article.classList.add('art');
 
-        let extension = picture.split('.').pop();
-        
-        if(extension == "jpg") {
+        if(image) {
             var img = document.createElement( 'img' );
             img.setAttribute("src", picture);
             img.setAttribute("alt", data.title);
@@ -104,6 +102,20 @@ function mediaTemplate(data) {
         const likes = document.createElement('span');
         likes.innerHTML = data.likes;
         likes.classList.add('likes');
+        likes.setAttribute('id', id);
+        likes.addEventListener("click", function () {
+            let currentLikes = parseInt(likes.textContent);
+            
+            likes.classList.toggle("isLiked");
+
+            if(likes.classList.contains("isLiked")) {
+                likes.innerHTML = currentLikes + 1;
+            }
+            else {
+                likes.innerHTML = currentLikes - 1;
+            }
+            likes.appendChild(heart);
+        });
 
         const heart = document.createElement('i');
         heart.classList.add("fa-solid", "fa-heart", "heart");
