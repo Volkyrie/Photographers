@@ -74,6 +74,78 @@ async function displayMedia(photographers, media) {
         likesPrint.innerText = totLikes + nbLiked.length;
         likesPrint.appendChild(heart);
     }));
+
+    //Sorting popularity
+    const popularity_btn = document.querySelector("#popularity_btn");
+
+    popularity_btn.addEventListener("click", function () {
+        const popularityOrdonnees = Array.from(media);
+
+        popularityOrdonnees.sort(function (a, b) {
+            return b.likes - a.likes;
+        });
+
+        document.querySelector(".media_section").innerHTML = "";
+        popularityOrdonnees.forEach((media) => {
+            if(media.photographerId == id) {
+                const photographerMedia = mediaTemplate(media);
+                const userMediaDOM = photographerMedia.getUserMediaDOM();
+                photographerMediaSection.appendChild(userMediaDOM);
+                console.log("Tri popularité");
+            }
+        });
+    });
+
+    //Sorting date
+    const date_btn = document.querySelector("#date_btn");
+
+    date_btn.addEventListener("click", function () {
+        const datesOrdonnees = Array.from(media);
+
+        datesOrdonnees.sort(function (a, b) {
+            return new Date(b.date) - new Date(a.date);
+        });
+
+        document.querySelector(".media_section").innerHTML = "";
+        datesOrdonnees.forEach((media) => {
+            if(media.photographerId == id) {
+                const photographerMedia = mediaTemplate(media);
+                const userMediaDOM = photographerMedia.getUserMediaDOM();
+                photographerMediaSection.appendChild(userMediaDOM);
+                console.log("Tri date");
+            }
+        });
+    });
+
+    //Sorting title
+    const title_btn = document.querySelector("#title_btn");
+
+    title_btn.addEventListener("click", function () {
+        const titlesOrdonnees = Array.from(media);
+
+        titlesOrdonnees.sort(function (a, b) {
+            if(a.title < b.title) {
+                return -1;
+            }
+            else if (a.title > b.title) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+
+        document.querySelector(".media_section").innerHTML = "";
+        titlesOrdonnees.forEach((media) => {
+            if(media.photographerId == id) {
+                const photographerMedia = mediaTemplate(media);
+                const userMediaDOM = photographerMedia.getUserMediaDOM();
+                photographerMediaSection.appendChild(userMediaDOM);
+                console.log("Tri titre");
+            }
+        });
+    });
+
 }
 
 async function profileInit() {

@@ -110,6 +110,7 @@ function mediaTemplate(data) {
 
             if(likes.classList.contains("isLiked")) {
                 likes.innerHTML = currentLikes + 1;
+                
             }
             else {
                 likes.innerHTML = currentLikes - 1;
