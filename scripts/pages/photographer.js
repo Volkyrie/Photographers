@@ -75,6 +75,18 @@ async function displayMedia(photographers, media) {
         likesPrint.appendChild(heart);
     }));
 
+
+    //Sorting select
+    const sort = document.querySelector("#sort-btn");
+    const dropdown = document.querySelector(".dropdown");
+    const arrow = document.createElement('i');
+    arrow.classList.add("fa-solid", "fa-chevron-down");
+
+    sort.addEventListener("click", function() {
+        dropdown.style.display = "flex";
+        // sort.style.display = "none";
+    });
+
     //Sorting popularity
     const popularity_btn = document.querySelector("#popularity_btn");
 
@@ -94,6 +106,10 @@ async function displayMedia(photographers, media) {
                 console.log("Tri popularité");
             }
         });
+        sort.innerText = "Popularité";
+        sort.appendChild(arrow);
+        sort.style.display = "block";
+        dropdown.style.display = "none";
     });
 
     //Sorting date
@@ -115,6 +131,10 @@ async function displayMedia(photographers, media) {
                 console.log("Tri date");
             }
         });
+        sort.innerText = "Date";
+        sort.appendChild(arrow);
+        sort.style.display = "block";
+        dropdown.style.display = "none";
     });
 
     //Sorting title
@@ -144,6 +164,10 @@ async function displayMedia(photographers, media) {
                 console.log("Tri titre");
             }
         });
+        sort.innerText = "Titre";
+        sort.appendChild(arrow);
+        sort.style.display = "block";
+        dropdown.style.display = "none";
     });
 
 }

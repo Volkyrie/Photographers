@@ -65,10 +65,126 @@
     font-size: 18px;
 }
 
+.sort_button {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.sort_top {
+    display: flex;
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px 5px 0px 0px;
+    cursor: pointer;
+    align-items: center;
+    left: -170px;
+}
+
+.sort_mid {
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 0px;
+    cursor: pointer;
+    align-items: center;
+    z-index: 1;
+    top: 70px;
+    left: -170px;
+}
+
+.sort_mid:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 1%;
+    width: 150px;
+}
+
+.sort_bot {
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    background-color: #901C1C;
+    border-radius: 0px 0px 5px 5px;
+    cursor: pointer;
+    align-items: center;
+    border: none;
+    z-index: 1;
+    top: 140px;
+    left: -170px;
+}
+
+.sort_bot:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 1%;
+    width: 150px;
+}
+
+.fa-chevron-down {
+    color: white;
+    margin-left: 10px;
+}
+
+.fa-chevron-up {
+    color: white;
+    margin-left: 10px;
+}
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
 .media_sort {
     display: flex;
     width: 100%;
     padding: 20px 100px;
+}
+
+.sort-align {
+    display: flex;
+    align-items: center;
+}
+
+.sort {
+    margin-right: 20px;
 }
 
 .art {
@@ -256,7 +372,7 @@ form {
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 form label {

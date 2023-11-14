@@ -15,11 +15,14 @@
     <main id="main">
       <div class="photograph-header"></div>
         <div class="media_sort">
-          <span class="sort">Trier par</span>
-          <button id="popularity_btn" class="contact_button"> Popularité </button>
-          <div class="sort_div">
-            <button id="date_btn" class="contact_button"> Date </button>
-            <button id="title_btn"class="contact_button"> Titre </button>
+          <div class="sort-align">
+            <span class="sort">Trier par</span>
+            <button id="sort-btn" class="sort_button">Popularité <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i></button>
+          </div>
+          <div id="dropdown" class="dropdown">
+            <button id="popularity_btn" class="sort_top"> Popularité <i class="fa-solid fa-chevron-up" style="color: #ffffff;"></i></button>
+            <button id="date_btn" class="sort_mid"> Date </button>
+            <button id="title_btn"class="sort_bot"> Titre </button>
           </div>
         </div>
         <div class="media_section">
