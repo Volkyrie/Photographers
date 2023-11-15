@@ -9,7 +9,7 @@ const errorMsg = document.querySelectorAll(".error");
 //RegExp
 const onlyLetters = new RegExp(/[a-zA-Z-]{2,}/i);
 const msgLength = new RegExp(/[a-zA-Z0-9-]{2,}/i);
-let emailPattern = new RegExp(/[a-z0-9\.-]+@[a-z0-9\.-]+(\.[a-z0-9._-]+)/);
+let emailPattern = new RegExp(/[a-z0-9.-]+@[a-z0-9.-]+(\.[a-z0-9._-]+)/);
 
 // launch modal form
 function displayModal() {

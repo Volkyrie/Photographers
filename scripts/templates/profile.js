@@ -1,5 +1,5 @@
 function photographerTemplate(data) {
-    const { name, portrait, city, country, tagline, price, id } = data;
+    const { name, portrait, city, country, tagline } = data;
 
     const picture = `assets/images/Photographers ID Photos/${portrait}`;
 
@@ -23,17 +23,17 @@ function photographerTemplate(data) {
         btn.setAttribute("onclick", "displayModal()");
 
         const location = document.createElement('span');
-        location.innerText = `${data.city}, ${data.country}`;
+        location.innerText = `${city}, ${country}`;
         location.classList.add('location');
 
-        const tagline = document.createElement('span');
-        tagline.innerHTML = data.tagline;
-        tagline.classList.add('tagline');
+        const line = document.createElement('span');
+        line.innerHTML = tagline;
+        line.classList.add('tagline');
 
         article.appendChild(infos);
         infos.appendChild(h1);
         infos.appendChild(location);
-        infos.appendChild(tagline);
+        infos.appendChild(line);
         article.appendChild(btn);
         article.appendChild(img);
         return (article);
@@ -73,7 +73,7 @@ function mediaTemplate(data) {
             
         }
         else {
-            var img = document.createElement('video');
+            img = document.createElement('video');
             img.setAttribute("src", videoLink);
             img.setAttribute("title", data.title);
             img.onclick = function() {
@@ -99,23 +99,23 @@ function mediaTemplate(data) {
         title.innerHTML = data.title;
         title.classList.add('title');
 
-        const likes = document.createElement('span');
-        likes.innerHTML = data.likes;
-        likes.classList.add('likes');
-        likes.setAttribute('id', id);
-        likes.addEventListener("click", function () {
-            let currentLikes = parseInt(likes.textContent);
+        const mediaLikes = document.createElement('span');
+        mediaLikes.innerHTML = likes;
+        mediaLikes.classList.add('likes');
+        mediaLikes.setAttribute('id', id);
+        mediaLikes.addEventListener("click", function () {
+            let currentLikes = parseInt(mediaLikes.textContent);
             
-            likes.classList.toggle("isLiked");
+            mediaLikes.classList.toggle("isLiked");
 
-            if(likes.classList.contains("isLiked")) {
-                likes.innerHTML = currentLikes + 1;
+            if(mediaLikes.classList.contains("isLiked")) {
+                mediaLikes.innerHTML = currentLikes + 1;
                 
             }
             else {
-                likes.innerHTML = currentLikes - 1;
+                mediaLikes.innerHTML = currentLikes - 1;
             }
-            likes.appendChild(heart);
+            mediaLikes.appendChild(heart);
         });
 
         const heart = document.createElement('i');
@@ -124,8 +124,8 @@ function mediaTemplate(data) {
         article.appendChild(img);
         article.appendChild(picInfos);
         picInfos.appendChild(title);
-        picInfos.appendChild(likes);
-        likes.appendChild(heart);
+        picInfos.appendChild(mediaLikes);
+        mediaLikes.appendChild(heart);
         return (article);
     }
     return { title, picture, getUserMediaDOM }

@@ -184,8 +184,6 @@ profileInit();
 
 // Photo modal functions
 
-const previousClick = document.getElementById('prevClick');
-
 function closePhotoModal() {
     const modal = document.getElementById("photo_modal");
     modal.style.display = "none";
