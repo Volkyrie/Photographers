@@ -57,21 +57,25 @@
 				<form id="formID">
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input id="first"/>
+            <span class="error"></span>
 					</div>
           <div>
-						<label>Nom</label>
-						<input />
+						<label >Nom</label>
+						<input id="last"/>
+            <span class="error"></span>
 					</div>
           <div>
 						<label>Email</label>
-						<input />
+						<input id="email"/>
+            <span class="error"></span>
 					</div>
           <div>
             <label>Votre message</label>
-            <textarea class="message"></textarea>
+            <textarea id="msg" class="message"></textarea>
+            <span class="error"></span>
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button id="contact_btn" class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
