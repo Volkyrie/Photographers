@@ -57,7 +57,26 @@ function mediaTemplate(data) {
             var img = document.createElement( 'img' );
             img.setAttribute("src", picture);
             img.setAttribute("alt", data.title);
+            img.setAttribute("alt", data.title);
+            img.setAttribute("tabindex", "0");
+            img.setAttribute("role", "button");
+            img.setAttribute("aria-pressed", "false");
+
             img.onclick = function() {
+                const openPhotoModal = document.getElementById("photo_modal");
+                openPhotoModal.style.display = "block";
+
+                const modalVideo = document.getElementById("video_print");
+                modalVideo.style.display = "none";
+
+                const modalPhoto = document.getElementById("photo_print");
+                modalPhoto.style.display = "block";
+                const photoTitle = document.getElementById("title");
+                modalPhoto.src = this.src;
+                photoTitle.innerText = this.alt;
+            }
+
+            img.onkeypress = function() {
                 const openPhotoModal = document.getElementById("photo_modal");
                 openPhotoModal.style.display = "block";
 
@@ -76,7 +95,26 @@ function mediaTemplate(data) {
             img = document.createElement('video');
             img.setAttribute("src", videoLink);
             img.setAttribute("title", data.title);
+            img.setAttribute("alt", data.title);
+            img.setAttribute("tabindex", "0");
+            img.setAttribute("role", "button");
+            img.setAttribute("aria-pressed", "false");
+
             img.onclick = function() {
+                const openVideoModal = document.getElementById("photo_modal");
+                openVideoModal.style.display = "block";
+
+                const modalPhoto = document.getElementById("photo_print");
+                modalPhoto.style.display = "none";
+
+                const modalVideo = document.getElementById("video_print");
+                modalVideo.style.display = "block";
+                const videoTitle = document.getElementById("title");
+                modalVideo.src = this.src;
+                videoTitle.innerText = this.title;
+            }
+
+            img.onkeypress = function() {
                 const openVideoModal = document.getElementById("photo_modal");
                 openVideoModal.style.display = "block";
 

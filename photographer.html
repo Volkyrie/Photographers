@@ -14,19 +14,18 @@
     </header>
     <main id="main">
       <div class="photograph-header"></div>
-        <div class="media_sort">
-          <div class="sort-align">
-            <span class="sort">Trier par</span>
-            <button id="sort-btn" class="sort_button">Popularité <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i></button>
-          </div>
-          <div id="dropdown" class="dropdown">
-            <button id="popularity_btn" class="sort_top"> Popularité <i class="fa-solid fa-chevron-up" style="color: #ffffff;"></i></button>
-            <button id="date_btn" class="sort_mid"> Date </button>
-            <button id="title_btn"class="sort_bot"> Titre </button>
-          </div>
+      <div class="media_sort">
+        <div class="sort-align">
+          <span class="sort">Trier par</span>
+          <button id="sort-btn" class="sort_button" aria-label="Trier les éléments par">Popularité <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i></button>
         </div>
-        <div class="media_section">
+        <div id="dropdown" class="dropdown">
+          <button id="popularity_btn" aria-label="Popularité" class="sort_top"> Popularité <i class="fa-solid fa-chevron-up" style="color: #ffffff;"></i></button>
+          <button id="date_btn" aria-label="Date" class="sort_mid"> Date </button>
+          <button id="title_btn" aria-label="Titre" class="sort_bot"> Titre </button>
         </div>
+      </div>
+      <div class="media_section">
       </div>
       <div class="price-area">
       </div>
@@ -34,16 +33,16 @@
 
     <div id="photo_modal">
       <div id="photo_content">
-        <svg class="close-cross" onclick="closePhotoModal()" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="close-cross" onclick="closePhotoModal()" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" tabindex="0" role="button" onkeypress="closePhotoModal()" aria-label="Fermer la modale">
           <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#901C1C"/>
-          </svg>
-        <i id="prevClick" class="fa-solid fa-chevron-left" onclick="moveSlidePrev()"></i>
+        </svg>
+        <i id="prevClick" class="fa-solid fa-chevron-left" onclick="moveSlidePrev()" tabindex="0" role="button" onkeypress="moveSlidePrev()" aria-label="Précédent"></i>
         <div class="align-media">
-          <img id="photo_print"/>
+          <img id="photo_print">
           <video id="video_print" controls></video>
           <div id="title"></div>
         </div>
-        <i id="nextClick" class="fa-solid fa-chevron-right" onclick="moveSlideNext()"></i>
+        <i id="nextClick" class="fa-solid fa-chevron-right" onclick="moveSlideNext()" tabindex="0" role="button" onkeypress="moveSlideNext()" aria-label="Suivant"></i>
       </div>
     </div>
 
@@ -51,28 +50,28 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" alt="Fermer" aria-label="Fermer le formulaire" tabindex="0" role="button" onclick="closeModal()" onkeypress="closeModal()"/>
           <h2 class="name"></h2>
         </header>
 				<form id="formID">
 					<div>
 						<label>Prénom</label>
-						<input id="first"/>
+						<input id="first" aria-required="true"/>
             <span class="error"></span>
 					</div>
           <div>
 						<label >Nom</label>
-						<input id="last"/>
+						<input id="last" aria-required="true"/>
             <span class="error"></span>
 					</div>
           <div>
 						<label>Email</label>
-						<input id="email"/>
+						<input id="email" aria-required="true"/>
             <span class="error"></span>
 					</div>
           <div>
             <label>Votre message</label>
-            <textarea id="msg" class="message"></textarea>
+            <textarea id="msg" class="message" aria-required="true"></textarea>
             <span class="error"></span>
           </div>
           <button id="contact_btn" class="contact_button">Envoyer</button>
