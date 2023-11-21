@@ -17,10 +17,9 @@ function photographerTemplate(data) {
         h1.textContent = name;
 
         const btn = document.createElement('button');
-        btn.setAttribute("id", "form-button")
+        btn.setAttribute("id", "form_button");
         btn.textContent = "Contactez-moi";
         btn.classList.add('contact_button');
-        btn.setAttribute("onclick", "displayModal()");
 
         const location = document.createElement('span');
         location.innerText = `${city}, ${country}`;
@@ -158,6 +157,7 @@ function mediaTemplate(data) {
 
         const heart = document.createElement('i');
         heart.classList.add("fa-solid", "fa-heart", "heart");
+        heart.setAttribute("aria-labelledby", "Like");
 
         article.appendChild(img);
         article.appendChild(picInfos);

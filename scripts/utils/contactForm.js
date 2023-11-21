@@ -5,6 +5,7 @@ const lastInput = document.getElementById("last");
 const emailInput = document.getElementById("email");
 const msgInput = document.getElementById("msg");
 const errorMsg = document.querySelectorAll(".error");
+const closeBtn = document.getElementById("closeModal_btn");
 
 //RegExp
 const onlyLetters = new RegExp(/[a-zA-Z-]{2,}/i);
@@ -17,11 +18,30 @@ function displayModal() {
 	modal.style.display = "block";
 }
 
+function loadFormButton () {
+    const openBtn = document.getElementById("form_button");
+    openBtn.addEventListener('click', function () {
+        displayModal();
+    });
+
+};
+
 // Close modal form
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
+
+    
+closeBtn.addEventListener('click', function () {
+    closeModal();
+});
+
+closeBtn.addEventListener('keydown', function (event) {
+    if(event.code === 'Enter') {
+        closeModal();
+    }
+});
 
 // Empty errorMsg
 function emptyError() {

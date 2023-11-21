@@ -169,7 +169,7 @@ async function displayMedia(photographers, media) {
         sort.style.display = "block";
         dropdown.style.display = "none";
     });
-
+    loadFormButton();
 }
 
 async function profileInit() {
@@ -188,6 +188,18 @@ function closePhotoModal() {
     const modal = document.getElementById("photo_modal");
     modal.style.display = "none";
 }
+
+const closePhotoBtn = document.getElementById("closePhoto_btn");
+
+closePhotoBtn.addEventListener('click', function () {
+    closePhotoModal();
+});
+
+closePhotoBtn.addEventListener('keydown', function (event) {
+    if(event.code === 'Enter') {
+        closePhotoModal();
+    }
+});
 
 async function moveSlidePrev() {
     const { media } = await getMedia();
@@ -289,3 +301,27 @@ async function moveSlideNext() {
         }
     }
 }
+
+const prev_btn = document.querySelector("#prevClick");
+
+prev_btn.addEventListener("click", function () {
+    moveSlidePrev();
+});
+
+prev_btn.addEventListener('keydown', function (event) {
+    if(event.code === 'Enter') {
+        moveSlidePrev();
+    }
+});
+
+const next_btn = document.querySelector("#nextClick");
+
+next_btn.addEventListener("click", function () {
+    moveSlideNext();
+});
+
+next_btn.addEventListener('keydown', function (event) {
+    if(event.code === 'Enter') {
+        moveSlideNext();
+    }
+});

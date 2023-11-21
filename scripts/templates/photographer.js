@@ -5,8 +5,10 @@ function photographerTemplate(data) {
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
+        article.setAttribute("aria-label", name);
         const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
         const a = document.createElement('a');
         a.href=`/photographer.html?id=${id}`;
         const h2 = document.createElement( 'h2' );

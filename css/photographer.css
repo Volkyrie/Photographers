@@ -2,6 +2,26 @@
     display: none;
 }
 
+.fa-heart:hover {
+    cursor: pointer;
+}
+
+.modal img:hover {
+    cursor: pointer;
+}
+
+.art img:hover {
+    cursor: pointer;
+}
+
+#photo_modal svg:hover {
+    cursor: pointer;
+}
+
+#photo_modal i:hover {
+    cursor: pointer;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
