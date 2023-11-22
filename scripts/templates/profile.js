@@ -12,6 +12,7 @@ function photographerTemplate(data) {
 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
 
         const h1 = document.createElement( 'h1' );
         h1.textContent = name;
@@ -140,6 +141,8 @@ function mediaTemplate(data) {
         mediaLikes.innerHTML = likes;
         mediaLikes.classList.add('likes');
         mediaLikes.setAttribute('id', id);
+        mediaLikes.setAttribute('title', 'like');
+        mediaLikes.setAttribute('aria-label', 'like');
         mediaLikes.addEventListener("click", function () {
             let currentLikes = parseInt(mediaLikes.textContent);
             
@@ -150,14 +153,15 @@ function mediaTemplate(data) {
                 
             }
             else {
-                mediaLikes.innerHTML = currentLikes - 1;
+                mediaLikes.innerHTML = currentLikes - 1;    
             }
             mediaLikes.appendChild(heart);
         });
 
         const heart = document.createElement('i');
         heart.classList.add("fa-solid", "fa-heart", "heart");
-        heart.setAttribute("aria-labelledby", "Like");
+        heart.setAttribute('title', 'like');
+        heart.setAttribute('aria-label', 'like');
 
         article.appendChild(img);
         article.appendChild(picInfos);
